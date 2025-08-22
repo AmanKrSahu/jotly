@@ -1,7 +1,7 @@
 "use client";
 
 import { useQueryState } from "nuqs";
-import { ChevronRight, File } from "lucide-react";
+import { BookOpen, ChevronRight } from "lucide-react";
 
 import {
   SidebarGroup,
@@ -53,7 +53,7 @@ export function SidebarData({ data }: SidebarDataProps) {
           <SidebarGroup>
             <SidebarGroupLabel
               asChild
-              className="group/label text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sm"
+              className="group/label text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sm cursor-pointer"
             >
               <CollapsibleTrigger>
                 {item.title}{" "}
@@ -68,8 +68,11 @@ export function SidebarData({ data }: SidebarDataProps) {
                   {item.items.map((item) => (
                     <SidebarMenuItem key={item.title}>
                       <SidebarMenuButton asChild>
-                        <a href={item.url}>
-                          <File />
+                        <a
+                          href={item.url}
+                          className="ml-2 flex items-center gap-2"
+                        >
+                          <BookOpen />
                           {item.title}
                         </a>
                       </SidebarMenuButton>
