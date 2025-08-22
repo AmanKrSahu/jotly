@@ -130,7 +130,11 @@ export function LoginForm({
                   />
                 </div>
                 <div className="flex flex-col gap-3">
-                  <Button type="submit" className="w-full" disabled={isLoading}>
+                  <Button
+                    type="submit"
+                    className="w-full cursor-pointer"
+                    disabled={isLoading}
+                  >
                     {isLoading ? (
                       <Loader2 className="size-4 animate-spin" />
                     ) : (
@@ -139,7 +143,7 @@ export function LoginForm({
                   </Button>
                   <Button
                     variant="outline"
-                    className="w-full"
+                    className="w-full cursor-pointer"
                     onClick={signIn}
                     type="button"
                   >
